@@ -1,0 +1,11 @@
+*.db4o
+.svn*
+obj/
+*/obj/*
+bin/
+*/bin/
+*.suo
+*.user
+Log/
+log/
+*.db
