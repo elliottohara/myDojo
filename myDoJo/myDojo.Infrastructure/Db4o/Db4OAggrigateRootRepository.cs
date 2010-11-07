@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Db4objects.Db4o;
+﻿using Db4objects.Db4o;
 
 namespace myDojo.Infrastructure.Db4o
 {

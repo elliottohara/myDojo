@@ -8,7 +8,7 @@ using myDojo.Infrastructure.Db4o;
 
 namespace MyDojo.Query.Infrastructure
 {
-    public class Db4oReadModelRepository<T> :Db4oRepo<T>, IReadModelRepository<T> where T : ObjectWithIdentity,new()
+    public class Db4oReadModelRepository<T> :Db4oRepo<T>, IReadModelRepository<T> where T : IObjectWithIdentity,new()
     {
         public Db4oReadModelRepository(IObjectContainer db):base(db){}
         public IEnumerable<T> Get(Predicate<T> query)

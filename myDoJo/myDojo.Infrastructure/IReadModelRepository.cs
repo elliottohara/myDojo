@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace myDojo.Infrastructure
 {
-    public interface IReadModelRepository<T> where T : ObjectWithIdentity,new()
+    public interface IReadModelRepository<T> where T : IObjectWithIdentity,new()
     {
         void Store(T entity);
         IEnumerable<T> Get(Predicate<T> query);

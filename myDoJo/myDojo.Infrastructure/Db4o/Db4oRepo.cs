@@ -5,7 +5,7 @@ using Db4objects.Db4o;
 
 namespace myDojo.Infrastructure.Db4o
 {
-    public abstract class Db4oRepo<T>  where T:ObjectWithIdentity
+    public abstract class Db4oRepo<T>  where T:IObjectWithIdentity
     {
         protected IObjectContainer Db { get; private set; }
 

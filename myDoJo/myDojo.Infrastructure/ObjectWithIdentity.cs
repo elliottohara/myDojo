@@ -2,14 +2,20 @@ using System;
 
 namespace myDojo.Infrastructure
 {
-    public class ObjectWithIdentity
+    public interface IObjectWithIdentity
     {
-        public ObjectWithIdentity()
+        Guid Id { get; set; }
+        int Version { get; set; }
+    }
+
+    public abstract class ObjectWithIdentity : IObjectWithIdentity
+    {
+        protected ObjectWithIdentity()
         {
             Id = ANew.Comb();
         }
 
-        public ObjectWithIdentity(Guid id)
+        protected ObjectWithIdentity(Guid id)
         {
             Id = id;
         }
