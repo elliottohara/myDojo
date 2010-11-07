@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B69F526-3C0B-4CDE-A0C1-AC7E473AD0FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>myDojo.Domain</RootNamespace>
+    <AssemblyName>myDojo.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Db4objects.Db4o">
+      <HintPath>..\..\..\..\ThirdPartyLib\db4o\db4o-8.0\bin\net-4.0\Db4objects.Db4o.dll</HintPath>
+    </Reference>
+    <Reference Include="Db4objects.Db4o.Linq">
+      <HintPath>..\..\..\..\ThirdPartyLib\db4o\db4o-8.0\bin\net-4.0\Db4objects.Db4o.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\..\ThirdPartyLib\StructureMap\2.6.1\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dojo.cs" />
+    <Compile Include="Events\Dojos\StudentRegistered.cs" />
+    <Compile Include="Events\Dojos\UserCreatedDojo.cs" />
+    <Compile Include="Events\MartialArtists\UserRegisterd.cs" />
+    <Compile Include="Events\MartialArtists\MartialArtistChangedName.cs" />
+    <Compile Include="Events\MartialArtists\MartialArtistChangedBio.cs" />
+    <Compile Include="Events\MartialArtists\StudentPromoted.cs" />
+    <Compile Include="Referer.cs" />
+    <Compile Include="RefererRepository.cs" />
+    <Compile Include="Registration.cs" />
+    <Compile Include="ServiceLocation\DomainRegistry.cs" />
+    <Compile Include="StudentAlreadyRegisteredException.cs" />
+    <Compile Include="Users\Instructor.cs" />
+    <Compile Include="Users\MartialArtist.cs" />
+    <Compile Include="Users\Promotion.cs" />
+    <Compile Include="Users\Rank.cs" />
+    <Compile Include="Users\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\myDojo.Infrastructure\myDojo.Infrastructure.csproj">
+      <Project>{EB231D2C-AA1A-40D6-A1C9-8546ED11940B}</Project>
+      <Name>myDojo.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

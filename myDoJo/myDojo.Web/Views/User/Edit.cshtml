@@ -1,0 +1,15 @@
+﻿@inherits System.Web.Mvc.WebViewPage<myDojo.Web.Models.EditMartialArtistForm>
+
+@{
+    View.Title = "Edit";
+    LayoutPage = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Edit</h2>
+
+	<form action='@Url.Action("Edit","User")' method='post'>
+		@Html.HiddenFor(m => m.Id)
+       <label>Your Name is? @Html.TextBoxFor(m => m.Name);</label>
+		<label>Biography<br />@Html.TextBoxFor(m => m.Biography)</label>
+		<input type="submit" value="ok" />
+	</form>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB231D2C-AA1A-40D6-A1C9-8546ED11940B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>myDojo.Infrastructure</RootNamespace>
+    <AssemblyName>myDojo.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Db4objects.Db4o">
+      <HintPath>..\..\..\..\ThirdPartyLib\db4o\db4o-8.0\bin\net-4.0\Db4objects.Db4o.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\refs\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CQRS\Commands\Error.cs" />
+    <Compile Include="CQRS\Commands\Failure.cs" />
+    <Compile Include="CQRS\Commands\ICommand.cs" />
+    <Compile Include="CQRS\Commands\ICommandHandler.cs" />
+    <Compile Include="CQRS\Commands\ICommandHandlerResult.cs" />
+    <Compile Include="CQRS\Commands\SimpleCommandHandler.cs" />
+    <Compile Include="CQRS\Commands\Results.cs" />
+    <Compile Include="CQRS\Commands\Success.cs" />
+    <Compile Include="CQRS\Events\DomainEvents.cs" />
+    <Compile Include="CQRS\Events\Handles.cs" />
+    <Compile Include="CQRS\Events\IDomainEvent.cs" />
+    <Compile Include="Db4o\Db4OAggrigateRootRepository.cs" />
+    <Compile Include="Db4o\Db4OReadModelRepository.cs" />
+    <Compile Include="Db4o\Db4oRepo.cs" />
+    <Compile Include="IAggrigateRootRepository.cs" />
+    <Compile Include="IReadModelRepository.cs" />
+    <Compile Include="ANew.cs" />
+    <Compile Include="ObjectWithIdentity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceLocation.cs" />
+    <Compile Include="Web\CommandActionResult.cs" />
+    <Compile Include="Web\DefaultController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

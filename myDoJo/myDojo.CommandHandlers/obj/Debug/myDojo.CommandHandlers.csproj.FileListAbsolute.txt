@@ -1,0 +1,17 @@
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\obj\Debug\ResolveAssemblyReference.cache
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\bin\Debug\myDojo.CommandHandlers.dll
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\bin\Debug\myDojo.CommandHandlers.pdb
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\bin\Debug\myDojo.Commands.dll
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\bin\Debug\myDojo.Domain.dll
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\bin\Debug\myDojo.Infrastructure.dll
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\bin\Debug\MyDojo.Query.dll
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\bin\Debug\StructureMap.dll
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\bin\Debug\Db4objects.Db4o.dll
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\bin\Debug\myDojo.Commands.pdb
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\bin\Debug\myDojo.Domain.pdb
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\bin\Debug\myDojo.Infrastructure.pdb
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\bin\Debug\MyDojo.Query.pdb
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\bin\Debug\StructureMap.xml
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\bin\Debug\Db4objects.Db4o.xml
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\obj\Debug\myDojo.CommandHandlers.dll
+C:\Git\mydojo\myDoJo\myDojo.CommandHandlers\obj\Debug\myDojo.CommandHandlers.pdb

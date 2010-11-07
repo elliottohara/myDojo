@@ -1,0 +1,9 @@
+C:\Git\mydojo\myDoJo\myDojo.Infrastructure\bin\Debug\myDojo.Infrastructure.dll
+C:\Git\mydojo\myDoJo\myDojo.Infrastructure\bin\Debug\myDojo.Infrastructure.pdb
+C:\Git\mydojo\myDoJo\myDojo.Infrastructure\bin\Debug\Db4objects.Db4o.dll
+C:\Git\mydojo\myDoJo\myDojo.Infrastructure\bin\Debug\Db4objects.Db4o.xml
+C:\Git\mydojo\myDoJo\myDojo.Infrastructure\obj\Debug\ResolveAssemblyReference.cache
+C:\Git\mydojo\myDoJo\myDojo.Infrastructure\obj\Debug\myDojo.Infrastructure.dll
+C:\Git\mydojo\myDoJo\myDojo.Infrastructure\obj\Debug\myDojo.Infrastructure.pdb
+C:\Git\mydojo\myDoJo\myDojo.Infrastructure\bin\Debug\StructureMap.dll
+C:\Git\mydojo\myDoJo\myDojo.Infrastructure\bin\Debug\StructureMap.xml

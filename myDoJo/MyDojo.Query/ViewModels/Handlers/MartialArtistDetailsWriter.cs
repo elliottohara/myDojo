@@ -1,0 +1,58 @@
+﻿using myDojo.Domain.Events;
+using myDojo.Domain.Events.MartialArtists;
+using myDojo.Infrastructure;
+using myDojo.Infrastructure.CQRS;
+using MyDojo.Query.Infrastructure;
+
+namespace MyDojo.Query.ViewModels
+{
+    public class MartialArtistDetailsWriter : 
+        Handles<UserRegisterd>,
+        Handles<MartialArtistChangedName>,
+        Handles<MartialArtistChangedBio>,
+        Handles<StudentPromoted>
+    {
+        private readonly IReadModelRepository<MartialArtistDetails> _detailsReadModelRepository;
+
+        public MartialArtistDetailsWriter(IReadModelRepository<MartialArtistDetails> detailsReadModelRepository)
+        {
+            _detailsReadModelRepository = detailsReadModelRepository;
+        }
+
+        public void Handle(UserRegisterd @event)
+        {
+            var details = _detailsReadModelRepository.GetSingle(d => d.EmailAddress == @event.EmailAddress) ??
+                          new MartialArtistDetails(@event.Id);
+            details.EmailAddress = @event.EmailAddress;
+            details.Id = @event.Id;
+            _detailsReadModelRepository.Store(details);
+        }
+
+        public void Handle(MartialArtistChangedName @event)
+        {
+            var details = TheDetailsForMartialArtistWithIdOf(@event);
+            details.Name = @event.Name;
+            _detailsReadModelRepository.Store(details);
+        }
+
+        private MartialArtistDetails TheDetailsForMartialArtistWithIdOf(MartialArtistChangedName @event)
+        {
+            return _detailsReadModelRepository.GetById(@event.Id);
+        }
+
+        public void Handle(MartialArtistChangedBio @event)
+        {
+            var details = _detailsReadModelRepository.GetById(@event.Id);
+            details.Biography = @event.Bio;
+            _detailsReadModelRepository.Store(details);
+        }
+
+        public void Handle(StudentPromoted @event)
+        {
+            var details = _detailsReadModelRepository.GetById(@event.StudentId);
+            details.Belt = @event.Rank.Belt;
+            details.Stripes = @event.Rank.Stripes;
+            
+        }
+    }
+}

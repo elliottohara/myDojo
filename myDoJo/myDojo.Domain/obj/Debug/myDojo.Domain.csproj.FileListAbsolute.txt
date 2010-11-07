@@ -1,0 +1,13 @@
+c:\Git\mydojo\myDoJo\myDojo.Domain\bin\Debug\myDojo.Domain.dll
+c:\Git\mydojo\myDoJo\myDojo.Domain\bin\Debug\myDojo.Domain.pdb
+c:\Git\mydojo\myDoJo\myDojo.Domain\obj\Debug\ResolveAssemblyReference.cache
+c:\Git\mydojo\myDoJo\myDojo.Domain\obj\Debug\myDojo.Domain.dll
+c:\Git\mydojo\myDoJo\myDojo.Domain\obj\Debug\myDojo.Domain.pdb
+c:\Git\mydojo\myDoJo\myDojo.Domain\bin\Debug\StructureMap.dll
+c:\Git\mydojo\myDoJo\myDojo.Domain\bin\Debug\StructureMap.xml
+c:\Git\mydojo\myDoJo\myDojo.Domain\bin\Debug\Db4objects.Db4o.dll
+c:\Git\mydojo\myDoJo\myDojo.Domain\bin\Debug\Db4objects.Db4o.Linq.dll
+c:\Git\mydojo\myDoJo\myDojo.Domain\bin\Debug\Mono.Reflection.dll
+c:\Git\mydojo\myDoJo\myDojo.Domain\bin\Debug\Db4objects.Db4o.xml
+C:\Git\mydojo\myDoJo\myDojo.Domain\bin\Debug\myDojo.Infrastructure.dll
+C:\Git\mydojo\myDoJo\myDojo.Domain\bin\Debug\myDojo.Infrastructure.pdb

@@ -1,0 +1,14 @@
+﻿@inherits System.Web.Mvc.WebViewPage<IEnumerable<MyDojo.Query.ViewModels.MartialArtistDetails>>
+
+@{
+    View.Title = "ShowReferrers";
+    LayoutPage = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>All the Martial Artists</h2>
+    <ul>
+    @foreach(var martialArtist in Model){
+        <li>@martialArtist.Name</li>
+    }
+    </ul>
+

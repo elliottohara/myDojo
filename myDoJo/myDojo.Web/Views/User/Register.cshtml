@@ -1,0 +1,13 @@
+﻿@inherits System.Web.Mvc.WebViewPage<dynamic>
+
+@{
+    View.Title = "Register";
+    LayoutPage = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Register</h2>
+	<form action='@Url.Action("Register","User")' method='POST'>
+	<input name='email' />
+	<input type='submit' />
+	</form>
+
