@@ -1,4 +1,5 @@
-﻿using myDojo.Domain.Events;
+﻿using System;
+using myDojo.Domain.Events;
 using myDojo.Domain.Events.MartialArtists;
 using myDojo.Infrastructure;
 using myDojo.Infrastructure.CQRS;
@@ -30,26 +31,26 @@ namespace MyDojo.Query.ViewModels
 
         public void Handle(MartialArtistChangedName @event)
         {
-            var details = TheDetailsForMartialArtistWithIdOf(@event);
+            var details = TheDetailsForMartialArtistWithIdOf(@event.Id);
             details.Name = @event.Name;
             _detailsReadModelRepository.Store(details);
         }
 
-        private MartialArtistDetails TheDetailsForMartialArtistWithIdOf(MartialArtistChangedName @event)
+        private MartialArtistDetails TheDetailsForMartialArtistWithIdOf(Guid id)
         {
-            return _detailsReadModelRepository.GetById(@event.Id);
+            return _detailsReadModelRepository.GetById(id) ?? new MartialArtistDetails(id);
         }
 
         public void Handle(MartialArtistChangedBio @event)
         {
-            var details = _detailsReadModelRepository.GetById(@event.Id);
+            var details = TheDetailsForMartialArtistWithIdOf(@event.Id);
             details.Biography = @event.Bio;
             _detailsReadModelRepository.Store(details);
         }
 
         public void Handle(StudentPromoted @event)
         {
-            var details = _detailsReadModelRepository.GetById(@event.StudentId);
+            var details = TheDetailsForMartialArtistWithIdOf(@event.StudentId);
             details.Belt = @event.Rank.Belt;
             details.Stripes = @event.Rank.Stripes;
             

@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Infrastructure\QueryRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\EditMartialArtistNameViewModel.cs" />
     <Compile Include="ViewModels\Handlers\MartialArtistDetailsWriter.cs" />
     <Compile Include="ViewModels\MartialArtistDetails.cs" />
     <Compile Include="ViewModels\PromotionViewModel.cs" />
