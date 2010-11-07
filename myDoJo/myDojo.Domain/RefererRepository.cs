@@ -1,33 +1,32 @@
-﻿using System;
-using Db4objects.Db4o;
+﻿using Db4objects.Db4o;
 using myDojo.Infrastructure;
+using myDojo.Infrastructure.Db4o;
+using User = myDojo.Domain.Users.User;
 
 namespace myDojo.Domain
 {
-    public class RefererRepository : IAggrigateRootRepository<Referer>
+    public class RefererRepository : Db4OAggrigateRootRepository<Referer>, IAggrigateRootRepository<Referer>
     {
-        private readonly IObjectContainer _db;
-
-        public RefererRepository(IObjectContainer db)
+        public RefererRepository(IObjectContainer db) : base(db)
         {
-            _db = db;
         }
+
+        #region IAggrigateRootRepository<Referer> Members
 
         public void Store(Referer entity)
         {
             // only care about the user
-            foreach (var user in entity.UsersBrought)
+            foreach (User user in entity.UsersBrought)
             {
-                _db.Store(user);
+                Db.Store(user);
             }
         }
+
+        #endregion
+
         public Referer WithUrl(string url)
         {
             return new Referer(url);
-        }
-        public Referer GetById(Guid id)
-        {
-            return new Referer(null){Id = id};
         }
     }
 }

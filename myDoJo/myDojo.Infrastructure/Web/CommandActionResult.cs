@@ -27,18 +27,7 @@ namespace myDojo.Infrastructure.Web
                 return;
             }
             ICommandHandlerResult result = null;
-            //try
-            //{
-            //    var handler = Container.GetInstance<ICommandHandler<TCommand>>();
-            //    result = handler.Handle(Command);
-                
-            //}
-            //catch(Exception error)
-            //{
-            //    result = Results.Error(error);
-            //    CommandFailedResult(result).ExecuteResult(context);
-            //    return;
-            //}
+           
             var handler = Container.GetInstance<ICommandHandler<TCommand>>();
             result = handler.Handle(Command);
             if(result is Success)
