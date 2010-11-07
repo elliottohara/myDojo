@@ -109,7 +109,7 @@
   <ItemGroup>
     <None Include="Views\User\Edit.cshtml" />
     <None Include="Views\User\Register.cshtml" />
-    <None Include="Views\User\ShowReferrers.cshtml" />
+    <None Include="Views\User\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\myDojo.CommandHandlers\myDojo.CommandHandlers.csproj">

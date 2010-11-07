@@ -46,11 +46,11 @@ namespace myDojo.Web.Controllers
         [HttpPost]
         public CommandActionResult<EditMartialArtistInfo> Edit(EditMartialArtistForm model)
         {
-            return Command(new EditMartialArtistInfo(model.Id, model.Name, model.Biography), ShowReferrers);
+            return Command(new EditMartialArtistInfo(model.Id, model.Name, model.Biography), () => RedirectToAction("List"));
         }
-        public ActionResult ShowReferrers()
+        public ActionResult List()
         {
-            var users = _detailsReadModelRepository.GetAll();
+            var users = _detailsReadModelRepository.GetAll().AsEnumerable();
             return View(users);
         }
 
