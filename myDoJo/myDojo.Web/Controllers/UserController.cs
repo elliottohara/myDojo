@@ -1,10 +1,12 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using myDojo.Commands.Users;
 using myDojo.Domain;
 using myDojo.Domain.Users;
 using myDojo.Infrastructure;
 using myDojo.Infrastructure.Web;
+using MyDojo.Query.Queries;
 using MyDojo.Query.ViewModels;
 using myDojo.Web.Models;
 
@@ -34,6 +36,10 @@ namespace myDojo.Web.Controllers
             var viewModel = new EditMartialArtistForm(readModel);
             return View(viewModel);
 
+        }
+        public QueryActionResult<MartialArtistDetailsById> Details(Guid id)
+        {
+            return Query<MartialArtistDetailsById>(q => q.Id = id);
         }
         [HttpPost]
         public CommandActionResult<EditMartialArtistInfo> Edit(EditMartialArtistForm model)

@@ -8,7 +8,7 @@
     <h2>All the Martial Artists</h2>
     <ul>
     @foreach(var martialArtist in Model){
-        <li>@martialArtist.Name</li>
+        <li><a href="Detail/@martialArtist.Id">@martialArtist.Name</a></li>
     }
     </ul>
 

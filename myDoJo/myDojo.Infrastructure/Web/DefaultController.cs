@@ -1,6 +1,7 @@
 using System;
 using System.Web.Mvc;
 using myDojo.Infrastructure.CQRS.Commands;
+using myDojo.Infrastructure.CQRS.Query;
 
 namespace myDojo.Infrastructure.Web
 {
@@ -33,6 +34,13 @@ namespace myDojo.Infrastructure.Web
                            CommandFailedResult = DefaultCommandFailedResult,
                            ValidationFailedResult = DefaultFailureResult,
                            Success = success,
+                       };
+        }
+        public QueryActionResult<TQuery> Query<TQuery>(Action<TQuery> buildUpQuery) where TQuery: IQuery
+        {
+            return new QueryActionResult<TQuery>
+                       {
+                          BuildUpQuery = buildUpQuery,
                        };
         }
         

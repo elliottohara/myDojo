@@ -107,6 +107,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Views\User\Details.cshtml" />
     <None Include="Views\User\Edit.cshtml" />
     <None Include="Views\User\Register.cshtml" />
     <None Include="Views\User\List.cshtml" />
