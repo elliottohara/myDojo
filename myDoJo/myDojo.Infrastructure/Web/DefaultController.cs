@@ -36,13 +36,18 @@ namespace myDojo.Infrastructure.Web
                            Success = success,
                        };
         }
-        public QueryActionResult<TQuery> Query<TQuery>(Action<TQuery> buildUpQuery) where TQuery: IQuery
+        public QueryActionResult<TQuery> Query<TQuery>(Action<TQuery> buildUpQuery=null,string viewName=null) where TQuery: IQuery
         {
-            return new QueryActionResult<TQuery>
+            var result = new QueryActionResult<TQuery>
                        {
                           BuildUpQuery = buildUpQuery,
+                          
                        };
+            if (!String.IsNullOrEmpty(viewName))
+                result.ViewName = viewName;
+            return result;
         }
+       
         
     }
 }

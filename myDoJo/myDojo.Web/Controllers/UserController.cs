@@ -37,7 +37,7 @@ namespace myDojo.Web.Controllers
             return View(viewModel);
 
         }
-        public QueryActionResult<MartialArtistDetailsById> Details(Guid id)
+        public ActionResult Details(Guid id)
         {
             return Query<MartialArtistDetailsById>(q => q.Id = id);
         }
@@ -48,8 +48,7 @@ namespace myDojo.Web.Controllers
         }
         public ActionResult List()
         {
-            var users = _detailsReadModelRepository.GetAll().AsEnumerable();
-            return View(users);
+            return Query<AllMatialArtists>();
         }
 
     }
