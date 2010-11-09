@@ -9,4 +9,4 @@ bin/
 Log/
 log/
 *.db
-_Resharper*/
+*/_Resharper*

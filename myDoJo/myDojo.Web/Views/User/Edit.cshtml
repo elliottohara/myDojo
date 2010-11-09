@@ -5,12 +5,25 @@
     LayoutPage = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <h2>Edit</h2>
-
-	<form action='@Url.Action("Edit","User")' method='post'>
-		@Html.HiddenFor(m => m.Id)
-        @Html.HiddenFor(m => m.EmailAddress);
-       <label>Your Name is? @Html.TextBoxFor(m => m.Name);</label>
-		<label>Biography<br />@Html.TextBoxFor(m => m.Biography)</label>
-		<input type="submit" value="ok" />
-	</form>
+    <h2>Edit your account</h2>
+    <fieldset>
+	    <form action='@Url.Action("Edit","User")' method='post'>
+		    @Html.HiddenFor(m => m.Id)
+            <div>
+                <span>@Model.EmailAddress</span>
+                @Html.HiddenFor(m => m.EmailAddress)
+            
+            </div>
+            <div>
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name)
+		    </div>
+            <div>
+                @Html.LabelFor(m => m.Biography)<br />
+                @Html.TextAreaFor(m => m.Biography)
+		    </div>
+            <div>
+                <input type="submit" value="Update" />
+            </div>
+	    </form>
+    </fieldset>

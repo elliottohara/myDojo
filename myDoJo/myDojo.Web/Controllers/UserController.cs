@@ -1,41 +1,26 @@
 ﻿using System;
-using System.Linq;
 using System.Web.Mvc;
 using myDojo.Commands.Users;
-using myDojo.Domain;
-using myDojo.Domain.Users;
-using myDojo.Infrastructure;
 using myDojo.Infrastructure.Web;
 using MyDojo.Query.Queries;
-using MyDojo.Query.ViewModels;
 using myDojo.Web.Models;
 
 namespace myDojo.Web.Controllers
 {
     public class UserController : DefaultController
     {
-        private readonly IReadModelRepository<MartialArtistDetails> _detailsReadModelRepository;
-        
-        public UserController(RefererRepository referrerRepo,IReadModelRepository<MartialArtistDetails> detailsReadModelRepository,IAggrigateRootRepository<MartialArtist> domainRepo)
-        {
-            _detailsReadModelRepository = detailsReadModelRepository;
-        }
-
         public ActionResult Register()
         {
-            return View();
+            return View(new RegisterUserForm());
         }
         [HttpPost]
-        public CommandActionResult<RegisterUser> Register(string email)
+        public CommandActionResult<RegisterUser> Register(RegisterUserForm form)
         {
-            return Command(new RegisterUser(email, null), () => RedirectToAction("Edit", new {email}));
+            return Command(new RegisterUser(form.EmailAddress, null), () => RedirectToAction("Edit", new {email = form.EmailAddress}));
         }
         public ActionResult Edit(string email)
         {
-            var readModel = _detailsReadModelRepository.GetSingle(d=>d.EmailAddress == email);
-            var viewModel = new EditMartialArtistForm(readModel);
-            return View(viewModel);
-
+            return MappedQuery<GetMartialArtistDetailsByEmail,EditMartialArtistForm>(s =>s.EmailAddress = email);
         }
         public ActionResult Details(Guid id)
         {

@@ -47,7 +47,10 @@ namespace myDojo.Infrastructure.Web
                 result.ViewName = viewName;
             return result;
         }
-       
+        public ActionResult MappedQuery<TQuery,TDestination>(Action<TQuery> buildUpQuery=null) where TQuery:IQuery
+        {
+            return new MappedQueryViewResult<TQuery, TDestination>(buildUpQuery);
+        }
         
     }
 }

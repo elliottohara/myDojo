@@ -33,7 +33,7 @@ namespace myDojo.Web
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "User", action = "Register", id = UrlParameter.Optional } // Parameter defaults
             );
 
         }
@@ -56,22 +56,16 @@ namespace myDojo.Web
         
         protected void Application_Start()
         {
-            
-            AreaRegistration.RegisterAllAreas();
 
+            StructureMapInitilizer.Initilize();
+
+            new Bootstrapper(ObjectFactory.Container).BootstrapApplication();
+            //TODO: make this stuff bootstrap classes
+            AreaRegistration.RegisterAllAreas();
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
             Db = OpenDatabase();
 
-            ObjectFactory.Configure(c =>
-                                        {
-                                            c.Scan(s =>
-                                                       {
-                                                           s.AssembliesFromApplicationBaseDirectory();
-                                                           s.LookForRegistries();
-                                                       });
-                                            
-                                        });
             ControllerBuilder.Current.SetControllerFactory(new StructureMapControllerFactory(ObjectFactory.Container));
             
         }

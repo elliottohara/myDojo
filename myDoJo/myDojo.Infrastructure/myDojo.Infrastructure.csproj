@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\refs\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Db4objects.Db4o">
       <HintPath>..\..\..\..\ThirdPartyLib\db4o\db4o-8.0\bin\net-4.0\Db4objects.Db4o.dll</HintPath>
     </Reference>
@@ -63,11 +66,14 @@
     <Compile Include="IAggrigateRootRepository.cs" />
     <Compile Include="IReadModelRepository.cs" />
     <Compile Include="ANew.cs" />
+    <Compile Include="IStartupTask.cs" />
     <Compile Include="ObjectWithIdentity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceLocation.cs" />
+    <Compile Include="Web\AutoMapViewResult.cs" />
     <Compile Include="Web\CommandActionResult.cs" />
     <Compile Include="Web\DefaultController.cs" />
+    <Compile Include="Web\MappedQueryViewResult.cs" />
     <Compile Include="Web\QueryActionResult.cs" />
   </ItemGroup>
   <ItemGroup>

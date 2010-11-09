@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\refs\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Db4objects.Db4o">
       <HintPath>..\..\..\..\ThirdPartyLib\db4o\db4o-8.0\bin\net-4.0\Db4objects.Db4o.dll</HintPath>
     </Reference>
@@ -66,7 +69,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Init\AutoMapperConfiguration.cs" />
+    <Compile Include="Init\BootStrapper.cs" />
     <Compile Include="Init\StructureMapControllerFactory.cs" />
+    <Compile Include="Init\StructureMapInitilizer.cs" />
+    <Compile Include="Init\WebRegistry.cs" />
     <Compile Include="Models\EditMartialArtistForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
