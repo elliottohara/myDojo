@@ -1,0 +1,12 @@
+﻿@inherits System.Web.Mvc.WebViewPage<MyDojo.Query.ViewModels.MartialArtistDetails>
+
+@{
+    View.Title = "Details";
+    LayoutPage = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>@Model.Name</h2>
+    <div>
+        @Model.Biography
+    </div>
+

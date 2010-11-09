@@ -1,0 +1,8 @@
+<Modules>
+  <Module PersistentId="678972EA-21FA-4BBE-94BF-A449104DD722" ModuleId="myDojo.Web" />
+  <Module PersistentId="EB231D2C-AA1A-40D6-A1C9-8546ED11940B" ModuleId="myDojo.Infrastructure" />
+  <Module PersistentId="25352851-39F2-4621-92C6-F7131C48C450" ModuleId="MyDojo.Query" />
+  <Module PersistentId="D492EC2B-904B-42C4-BD9D-BCF776FF7D6D" ModuleId="myDojo.Commands" />
+  <Module PersistentId="4B69F526-3C0B-4CDE-A0C1-AC7E473AD0FC" ModuleId="myDojo.Domain" />
+  <Module PersistentId="47B3FF75-9928-40E0-A9D8-280DE5F18F9C" ModuleId="myDojo.Domain.IntegrationTests" />
+</Modules>
