@@ -75,6 +75,7 @@
     <Compile Include="Init\StructureMapInitilizer.cs" />
     <Compile Include="Init\WebRegistry.cs" />
     <Compile Include="Models\EditMartialArtistForm.cs" />
+    <Compile Include="Models\RegisterUserForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
