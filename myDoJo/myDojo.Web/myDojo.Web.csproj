@@ -129,6 +129,10 @@
       <Project>{D492EC2B-904B-42C4-BD9D-BCF776FF7D6D}</Project>
       <Name>myDojo.Commands</Name>
     </ProjectReference>
+    <ProjectReference Include="..\myDojo.CommandValidation\myDojo.CommandValidation.csproj">
+      <Project>{AC41CC99-1CFB-4A9E-BB4B-9746A23FAAE1}</Project>
+      <Name>myDojo.CommandValidation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\myDojo.Domain\myDojo.Domain.csproj">
       <Project>{4B69F526-3C0B-4CDE-A0C1-AC7E473AD0FC}</Project>
       <Name>myDojo.Domain</Name>

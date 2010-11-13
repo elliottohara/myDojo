@@ -35,12 +35,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\ThirdPartyLib\NUnit\NUnit-2.5.8.10295\bin\net-2.0\framework\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\refs\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.6.1.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\when_using_the_command_validator.cs" />
     <Compile Include="MartialArtists\when_a_student_is_promoted.cs" />
     <Compile Include="Utilities\Accessor.cs" />
     <Compile Include="Utilities\SpecificationExtensions.cs" />

@@ -1,6 +1,7 @@
 using System;
 using System.Web.Mvc;
 using myDojo.Infrastructure.CQRS.Commands;
+using myDojo.Infrastructure.CQRS.Validation;
 using StructureMap;
 
 namespace myDojo.Infrastructure.Web
@@ -20,12 +21,26 @@ namespace myDojo.Infrastructure.Web
         public TCommand Command { get; set; }
         public override void ExecuteResult(ControllerContext context)
         {
-            
+
             if (!context.Controller.ViewData.ModelState.IsValid)
             {
                 ValidationFailedResult().ExecuteResult(context);
                 return;
             }
+
+            var validator = Container.GetInstance<ICommandValidator<TCommand>>();
+
+            if (!validator.IsValid(Command))
+            {
+                foreach (var failedRule in validator.FailedRules)
+                {
+                    context.Controller.ViewData.ModelState.AddModelError(failedRule.GetType().Name,failedRule.ToString());
+                }
+                ValidationFailedResult().ExecuteResult(context);
+
+                return;
+            }
+
             ICommandHandlerResult result = null;
            
             var handler = Container.GetInstance<ICommandHandler<TCommand>>();

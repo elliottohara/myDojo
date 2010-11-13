@@ -265,6 +265,11 @@ namespace myDojo.Domain.UnitTests
             T result = actual.FirstOrDefault(expected);
             Assert.That(result, Is.Not.EqualTo(default(T)), "Expected item was not found in the actual sequence");
         }
+        public static IEnumerable<T> ShouldHaveA<T,U>(this IEnumerable<T> list)
+        {
+            list.FirstOrDefault(l => list.GetType().IsAssignableFrom(typeof (U))).ShouldNotBeNull();
+            return list;
+        }
 
         public static void ShouldNotContain(this string actual, string expected)
         {

@@ -5,4 +5,6 @@
   <Module PersistentId="D492EC2B-904B-42C4-BD9D-BCF776FF7D6D" ModuleId="myDojo.Commands" />
   <Module PersistentId="4B69F526-3C0B-4CDE-A0C1-AC7E473AD0FC" ModuleId="myDojo.Domain" />
   <Module PersistentId="47B3FF75-9928-40E0-A9D8-280DE5F18F9C" ModuleId="myDojo.Domain.IntegrationTests" />
+  <Module PersistentId="9FB291C4-7955-494A-90F9-30A73555009C" ModuleId="myDojo.Domain.UnitTests" />
+  <Module PersistentId="AC41CC99-1CFB-4A9E-BB4B-9746A23FAAE1" ModuleId="myDojo.CommandValidation" />
 </Modules>

@@ -56,6 +56,14 @@
     <Compile Include="test_the_repo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\myDojo.Commands\myDojo.Commands.csproj">
+      <Project>{D492EC2B-904B-42C4-BD9D-BCF776FF7D6D}</Project>
+      <Name>myDojo.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\myDojo.CommandValidation\myDojo.CommandValidation.csproj">
+      <Project>{AC41CC99-1CFB-4A9E-BB4B-9746A23FAAE1}</Project>
+      <Name>myDojo.CommandValidation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\myDojo.Domain.UnitTests\myDojo.Domain.UnitTests.csproj">
       <Project>{9FB291C4-7955-494A-90F9-30A73555009C}</Project>
       <Name>myDojo.Domain.UnitTests</Name>

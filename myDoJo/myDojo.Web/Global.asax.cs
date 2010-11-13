@@ -50,6 +50,8 @@ namespace myDojo.Web
             string relativePath = DbFileName;
             string filePath = HttpContext.Current.Server.MapPath(relativePath);
             return Db4oEmbedded.OpenFile(filePath);
+
+
         }
 
         public const string DbFileName = "myDojo.db4o";

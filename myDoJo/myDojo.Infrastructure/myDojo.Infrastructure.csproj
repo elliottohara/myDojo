@@ -41,6 +41,7 @@
       <HintPath>..\refs\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web" />
@@ -60,6 +61,9 @@
     <Compile Include="CQRS\Events\Handles.cs" />
     <Compile Include="CQRS\Events\IDomainEvent.cs" />
     <Compile Include="CQRS\Query\IQuery.cs" />
+    <Compile Include="CQRS\Validation\ICommandValidator.cs" />
+    <Compile Include="CQRS\Validation\IValidate.cs" />
+    <Compile Include="CQRS\Validation\StructureMapCommandValidator.cs" />
     <Compile Include="Db4o\Db4OAggrigateRootRepository.cs" />
     <Compile Include="Db4o\Db4OReadModelRepository.cs" />
     <Compile Include="Db4o\Db4oRepo.cs" />
@@ -75,6 +79,7 @@
     <Compile Include="Web\DefaultController.cs" />
     <Compile Include="Web\MappedQueryViewResult.cs" />
     <Compile Include="Web\QueryActionResult.cs" />
+    <Compile Include="Web\Validation\EmailAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
