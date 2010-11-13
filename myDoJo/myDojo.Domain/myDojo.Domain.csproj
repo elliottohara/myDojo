@@ -46,13 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dojo.cs" />
-    <Compile Include="Events\Dojos\StudentRegistered.cs" />
-    <Compile Include="Events\Dojos\UserCreatedDojo.cs" />
-    <Compile Include="Events\MartialArtists\UserRegisterd.cs" />
-    <Compile Include="Events\MartialArtists\MartialArtistChangedName.cs" />
-    <Compile Include="Events\MartialArtists\MartialArtistChangedBio.cs" />
-    <Compile Include="Events\MartialArtists\StudentPromoted.cs" />
+    <Compile Include="Dojos\Dojo.cs" />
     <Compile Include="Referer.cs" />
     <Compile Include="RefererRepository.cs" />
     <Compile Include="Registration.cs" />
@@ -66,6 +60,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\myDojo.Events\myDojo.Events.csproj">
+      <Project>{21914742-4143-4074-96F4-22CC686236F2}</Project>
+      <Name>myDojo.Events</Name>
+    </ProjectReference>
     <ProjectReference Include="..\myDojo.Infrastructure\myDojo.Infrastructure.csproj">
       <Project>{EB231D2C-AA1A-40D6-A1C9-8546ED11940B}</Project>
       <Name>myDojo.Infrastructure</Name>

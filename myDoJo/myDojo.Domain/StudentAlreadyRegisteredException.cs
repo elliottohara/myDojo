@@ -1,4 +1,5 @@
 ﻿using System;
+using myDojo.Domain.Dojos;
 using myDojo.Domain.Users;
 
 namespace myDojo.Domain

@@ -1,9 +1,8 @@
 ﻿using System;
-using myDojo.Domain.Events;
 using myDojo.Domain.Events.MartialArtists;
+using myDojo.Events.MartialArtists;
 using myDojo.Infrastructure;
 using myDojo.Infrastructure.CQRS;
-using MyDojo.Query.Infrastructure;
 
 namespace MyDojo.Query.ViewModels
 {
@@ -51,8 +50,8 @@ namespace MyDojo.Query.ViewModels
         public void Handle(StudentPromoted @event)
         {
             var details = TheDetailsForMartialArtistWithIdOf(@event.StudentId);
-            details.Belt = @event.Rank.Belt;
-            details.Stripes = @event.Rank.Stripes;
+            details.Belt = @event.Belt;
+            details.Stripes = @event.Stripes;
             
         }
     }

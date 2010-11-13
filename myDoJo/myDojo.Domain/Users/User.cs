@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using myDojo.Domain.Dojos;
 using myDojo.Domain.Events;
 using myDojo.Domain.Events.Dojos;
 using myDojo.Infrastructure;

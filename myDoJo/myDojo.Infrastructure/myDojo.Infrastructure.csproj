@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Address.cs" />
     <Compile Include="CQRS\Commands\Error.cs" />
     <Compile Include="CQRS\Commands\Failure.cs" />
     <Compile Include="CQRS\Commands\ICommand.cs" />

@@ -60,6 +60,10 @@
       <Project>{4B69F526-3C0B-4CDE-A0C1-AC7E473AD0FC}</Project>
       <Name>myDojo.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\myDojo.Events\myDojo.Events.csproj">
+      <Project>{21914742-4143-4074-96F4-22CC686236F2}</Project>
+      <Name>myDojo.Events</Name>
+    </ProjectReference>
     <ProjectReference Include="..\myDojo.Infrastructure\myDojo.Infrastructure.csproj">
       <Project>{EB231D2C-AA1A-40D6-A1C9-8546ED11940B}</Project>
       <Name>myDojo.Infrastructure</Name>

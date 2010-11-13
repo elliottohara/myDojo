@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using myDojo.Domain.Events;
 using myDojo.Domain.Events.MartialArtists;
+using myDojo.Events.MartialArtists;
 using myDojo.Infrastructure.CQRS;
 
 namespace myDojo.Domain.Users
@@ -24,7 +25,7 @@ namespace myDojo.Domain.Users
         {
             _promotions.Add(promotion);
             Rank = promotion.Rank;
-            DomainEvents.Raise(new StudentPromoted(promotion.Instructor.Id,this.Id,promotion.Rank));
+            DomainEvents.Raise(new StudentPromoted(promotion.Instructor.Id,this.Id,promotion.Rank.Belt,promotion.Rank.Stripes));
             return this;
         }
         public virtual MartialArtist ChangeNameTo(string name)

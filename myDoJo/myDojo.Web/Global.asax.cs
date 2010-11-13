@@ -6,7 +6,6 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Db4objects.Db4o;
-using myDojo.Domain.Events;
 using myDojo.Domain.ServiceLocation;
 using myDojo.Domain.Users;
 using MyDojo.Query.Infrastructure;
@@ -34,6 +33,7 @@ namespace myDojo.Web
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "User", action = "Register", id = UrlParameter.Optional } // Parameter defaults
+
             );
 
         }

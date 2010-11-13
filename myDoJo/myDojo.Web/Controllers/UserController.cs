@@ -18,6 +18,7 @@ namespace myDojo.Web.Controllers
         {
             return Command(new RegisterUser(form.EmailAddress, null), () => RedirectToAction("Edit", new {email = form.EmailAddress}));
         }
+        [HttpGet]
         public ActionResult Edit(string email)
         {
             return MappedQuery<GetMartialArtistDetailsByEmail,EditMartialArtistForm>(s =>s.EmailAddress = email);
@@ -29,7 +30,7 @@ namespace myDojo.Web.Controllers
         [HttpPost]
         public CommandActionResult<EditMartialArtistInfo> Edit(EditMartialArtistForm model)
         {
-            return Command(new EditMartialArtistInfo(model.Id, model.Name, model.Biography), () => RedirectToAction("List"));
+            return Command(new EditMartialArtistInfo(model.Id, model.Name, model.Biography), () => View(model));
         }
         public ActionResult List()
         {

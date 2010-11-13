@@ -51,6 +51,16 @@ namespace myDojo.Infrastructure.Web
         {
             return new MappedQueryViewResult<TQuery, TDestination>(buildUpQuery);
         }
+        protected ActionResult ContextualView(object model, string viewName=null)
+        {
+            if(Request.IsAjaxRequest())
+            {
+                return Json(model, JsonRequestBehavior.AllowGet);    
+            }
+            return String.IsNullOrEmpty(viewName) ? View(model) : View(viewName, model);
+            
+        }
         
     }
+    
 }

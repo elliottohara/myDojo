@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandHandlerRegistry.cs" />
+    <Compile Include="Dojos\CreateNewDojoHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users\ChangeBioHandler.cs" />
     <Compile Include="Users\ChangeNameHandler.cs" />

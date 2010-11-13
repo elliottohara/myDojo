@@ -2,6 +2,7 @@ using System;
 using myDojo.Domain.Events;
 using myDojo.Domain.Events.MartialArtists;
 using myDojo.Domain.Users;
+using myDojo.Events.MartialArtists;
 using NUnit.Framework;
 
 namespace myDojo.Domain.UnitTests.MartialArtists
@@ -31,9 +32,9 @@ namespace myDojo.Domain.UnitTests.MartialArtists
             Action promoting_the_student = () => because_the_instructor_promoted_him_to(rank);
             promoting_the_student.ShouldHaveRaised<StudentPromoted>(e =>
                                                                         {
-                                                                            e.StudentId = _student.Id;
-                                                                            e.Rank = rank;
-                                                                            e.InstructorId = _instructor.Id;
+                                                                            e.StudentId.ShouldEqual(_student.Id);
+                                                                            e.Belt.ShouldEqual(rank.Belt);
+                                                                            e.InstructorId.ShouldEqual(_instructor.Id);
                                                                         });
         }
         private Instructor _instructor;
