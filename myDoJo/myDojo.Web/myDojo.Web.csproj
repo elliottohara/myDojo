@@ -119,6 +119,7 @@
   <ItemGroup>
     <None Include="Views\Account\Logon.cshtml" />
     <None Include="Views\Schools\Create.cshtml" />
+    <None Include="Views\Schools\Details.cshtml" />
     <None Include="Views\Schools\List.cshtml" />
     <None Include="Views\User\Details.cshtml" />
     <None Include="Views\User\Edit.cshtml" />

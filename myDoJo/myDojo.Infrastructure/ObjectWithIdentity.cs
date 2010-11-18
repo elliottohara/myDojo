@@ -1,4 +1,6 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace myDojo.Infrastructure
 {
@@ -19,7 +21,9 @@ namespace myDojo.Infrastructure
         {
             Id = id;
         }
+        [HiddenInput(DisplayValue = false)]
         public virtual Guid Id { get; set; }
+        [HiddenInput(DisplayValue = false)]
         public virtual int Version { get; set; }
         public override bool Equals(object obj)
         {
