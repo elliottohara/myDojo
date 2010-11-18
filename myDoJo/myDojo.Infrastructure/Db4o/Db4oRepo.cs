@@ -16,7 +16,7 @@ namespace myDojo.Infrastructure.Db4o
         public virtual void Store(T entity)
         {
             entity.Version++;
-            Db.Store(entity);
+            Db.Ext().Store(entity,3);
         }
         public virtual T GetById(Guid id)
         {

@@ -46,7 +46,7 @@ namespace myDojo.Web
 
         }
 
-        public const string DbFileName = "myDojo.db4o";
+        public const string DbFileName = "myDojo3.db4o";
         
         protected void Application_Start()
         {
