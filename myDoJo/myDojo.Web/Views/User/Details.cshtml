@@ -6,7 +6,7 @@
 }
 
     <h2>@Model.Name</h2>
-    <a href='Edit/?email=@Model.EmailAddress'>Edit</a>
+    <a href='@Url.Action("Edit","User",new{email=Model.EmailAddress})'>Edit</a>
     <div>
         @Model.Biography
     </div>

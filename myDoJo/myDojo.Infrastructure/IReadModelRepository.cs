@@ -10,5 +10,7 @@ namespace myDojo.Infrastructure
         T GetSingle(Predicate<T> query);
         T GetById(Guid id);
         IEnumerable<T> GetAll();
+        T GetOrCreate(Guid id);
+        T Change(Guid id, Action<T> doThis);
     }
 }

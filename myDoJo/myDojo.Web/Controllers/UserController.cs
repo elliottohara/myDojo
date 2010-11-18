@@ -4,6 +4,7 @@ using myDojo.Commands.Users;
 using myDojo.Infrastructure.Web;
 using MyDojo.Query.Queries;
 using myDojo.Web.Models;
+using myDojo.Web.Models.Users;
 
 namespace myDojo.Web.Controllers
 {
@@ -16,12 +17,12 @@ namespace myDojo.Web.Controllers
         [HttpPost]
         public CommandActionResult<RegisterUser> Register(RegisterUserForm form)
         {
-            return Command(new RegisterUser(form.EmailAddress, null), () => RedirectToAction("Edit", new {email = form.EmailAddress}));
+            return Command(new RegisterUser(form.EmailAddress,null,form.Password), () => RedirectToAction("Edit", new {email = form.EmailAddress}));
         }
         [HttpGet]
         public ActionResult Edit(string email)
         {
-            return MappedQuery<GetMartialArtistDetailsByEmail,EditMartialArtistForm>(s =>s.EmailAddress = email);
+            return MappedQuery<GetMartialArtistDetailsByEmail,EditMartialArtistForm>(query =>query.EmailAddress = email);
         }
         public ActionResult Details(Guid id)
         {
@@ -30,7 +31,7 @@ namespace myDojo.Web.Controllers
         [HttpPost]
         public CommandActionResult<EditMartialArtistInfo> Edit(EditMartialArtistForm model)
         {
-            return Command(new EditMartialArtistInfo(model.Id, model.Name, model.Biography), () => View(model));
+            return Command(new EditMartialArtistInfo(model.Id, model.Name, model.Biography), () => RedirectToAction("List"));
         }
         public ActionResult List()
         {

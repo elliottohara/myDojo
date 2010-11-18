@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myDojo.CommandValidation", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myDojo.Events", "myDojo.Events\myDojo.Events.csproj", "{21914742-4143-4074-96F4-22CC686236F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication1", "MvcApplication1\MvcApplication1.csproj", "{464A3C85-A8F6-4C3C-8141-E0D8DFF5DC2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{21914742-4143-4074-96F4-22CC686236F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21914742-4143-4074-96F4-22CC686236F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21914742-4143-4074-96F4-22CC686236F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{464A3C85-A8F6-4C3C-8141-E0D8DFF5DC2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{464A3C85-A8F6-4C3C-8141-E0D8DFF5DC2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{464A3C85-A8F6-4C3C-8141-E0D8DFF5DC2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{464A3C85-A8F6-4C3C-8141-E0D8DFF5DC2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

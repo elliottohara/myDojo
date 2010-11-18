@@ -65,7 +65,9 @@
     <Reference Include="System.Web.Services" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\SchoolController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\SchoolsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -75,8 +77,9 @@
     <Compile Include="Init\StructureMapControllerFactory.cs" />
     <Compile Include="Init\StructureMapInitilizer.cs" />
     <Compile Include="Init\WebRegistry.cs" />
-    <Compile Include="Models\EditMartialArtistForm.cs" />
-    <Compile Include="Models\RegisterUserForm.cs" />
+    <Compile Include="Models\Account\LogonForm.cs" />
+    <Compile Include="Models\Users\EditMartialArtistForm.cs" />
+    <Compile Include="Models\Users\RegisterUserForm.cs" />
     <Compile Include="Models\Schools\CreateSchoolForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -102,10 +105,6 @@
     <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
-    <Content Include="Views\Account\ChangePassword.cshtml" />
-    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
-    <Content Include="Views\Account\LogOn.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
@@ -117,7 +116,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Views\School\Create.cshtml" />
+    <None Include="Views\Account\Logon.cshtml" />
+    <None Include="Views\Schools\Create.cshtml" />
+    <None Include="Views\Schools\List.cshtml" />
     <None Include="Views\User\Details.cshtml" />
     <None Include="Views\User\Edit.cshtml" />
     <None Include="Views\User\Register.cshtml" />

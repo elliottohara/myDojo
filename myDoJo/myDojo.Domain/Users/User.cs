@@ -23,6 +23,7 @@ namespace myDojo.Domain.Users
 
         protected internal virtual IList<Dojo> DojosCreated { get; set; }
         protected internal virtual String EmailAddress { get; set; }
+
         public User CreateDojoWithId(Guid dojoId)
         {
             var newDojo = new Dojo(dojoId,this);

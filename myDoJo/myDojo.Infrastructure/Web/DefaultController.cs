@@ -58,7 +58,6 @@ namespace myDojo.Infrastructure.Web
                 return Json(model, JsonRequestBehavior.AllowGet);    
             }
             return String.IsNullOrEmpty(viewName) ? View(model) : View(viewName, model);
-            
         }
         
     }

@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Db4objects.Db4o;
-using myDojo.Domain.ServiceLocation;
-using myDojo.Domain.Users;
-using MyDojo.Query.Infrastructure;
-using MyDojo.Query.ViewModels;
 using myDojo.Web.Init;
 using StructureMap;
 

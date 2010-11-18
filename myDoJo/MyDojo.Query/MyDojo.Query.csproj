@@ -46,10 +46,13 @@
     <Compile Include="Infrastructure\QueryRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\AllMatialArtists.cs" />
+    <Compile Include="Queries\Dojos\AllDojos.cs" />
     <Compile Include="Queries\GetMartialArtistDetailsByEmail.cs" />
     <Compile Include="Queries\MartialArtistDetailsById.cs" />
+    <Compile Include="ViewModels\Dojos\DojoDetails.cs" />
+    <Compile Include="ViewModels\Handlers\DojoDetailsWriter.cs" />
     <Compile Include="ViewModels\Handlers\MartialArtistDetailsWriter.cs" />
-    <Compile Include="ViewModels\MartialArtistDetails.cs" />
+    <Compile Include="ViewModels\Users\MartialArtistDetails.cs" />
     <Compile Include="ViewModels\PromotionViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

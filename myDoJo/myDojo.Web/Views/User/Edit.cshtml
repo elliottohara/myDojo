@@ -1,4 +1,4 @@
-﻿@inherits System.Web.Mvc.WebViewPage<myDojo.Web.Models.EditMartialArtistForm>
+﻿@inherits System.Web.Mvc.WebViewPage<myDojo.Web.Models.Users.EditMartialArtistForm>
 
 @{
     View.Title = "Edit";
@@ -8,21 +8,8 @@
     <h2>Edit your account</h2>
     <fieldset>
 	    <form action='@Url.Action("Edit","User")' method='post'>
-		    @Html.HiddenFor(m => m.Id)
-            <div>
-                <span>@Model.EmailAddress</span>
-                @Html.HiddenFor(m => m.EmailAddress)
-            
-            </div>
-            <div>
-                @Html.LabelFor(m => m.Name)
-                @Html.TextBoxFor(m => m.Name)
-		    </div>
-            <div>
-                @Html.LabelFor(m => m.Biography)<br />
-                @Html.TextAreaFor(m => m.Biography)
-		    </div>
-            <div>
+		   @Html.EditorForModel()
+		    <div>
                 <input type="submit" value="Update" />
             </div>
 	    </form>

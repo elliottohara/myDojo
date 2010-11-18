@@ -9,9 +9,7 @@
 	<form action='@Url.Action("Register","User")' method='POST'>
 	        @Html.ValidationSummary()
         <div>
-            @Html.LabelFor(m => m.EmailAddress)
-            @Html.TextBoxFor(m => m.EmailAddress)
-            @Html.ValidationMessageFor(m => m.EmailAddress)
+           @Html.EditorForModel()
         </div>
         <div>
             <input type="submit" value="ok" />

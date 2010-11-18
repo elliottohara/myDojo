@@ -6,11 +6,13 @@ namespace myDojo.Commands.Users
     {
         public string EmailAddress { get; set; }
         public string ReferrerUrl { get; set; }
+        public string Password { get; set; }
 
-        public RegisterUser(string emailAddress,string referrerUrl)
+        public RegisterUser(string emailAddress,string referrerUrl,string password)
         {
             EmailAddress = emailAddress;
             ReferrerUrl = referrerUrl;
+            Password = password;
         }
     }
 }
