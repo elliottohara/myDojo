@@ -1,0 +1,14 @@
+﻿@inherits System.Web.Mvc.WebViewPage<myDojo.Web.Models.Schools.CreateSchoolForm>
+
+@{
+    View.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Create</h2>
+   @using(Html.BeginForm()){
+        @Html.EditorForModel()
+        <input type="submit" value="Save" />
+    }
+
+    

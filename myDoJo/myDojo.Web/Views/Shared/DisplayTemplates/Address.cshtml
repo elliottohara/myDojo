@@ -1,0 +1,9 @@
+﻿@inherits System.Web.Mvc.WebViewPage<myDojo.Infrastructure.Core.Address>
+<address>
+    @Model.StreetNumber <br />
+    @Model.Street<br />
+    @Model.State, @Model.PostalCode
+</address>
+<a href="http://maps.google.com/maps?q=@HttpUtility.UrlEncode(Model.ToString())" target="_blank" title="Get directions on Google maps.">
+<img alt="Google Maps Image" src='http://maps.google.com/maps/api/staticmap?zoom=14&size=200x200&sensor=false&markers=@HttpUtility.UrlEncode(Model.ToString())' />
+</a>

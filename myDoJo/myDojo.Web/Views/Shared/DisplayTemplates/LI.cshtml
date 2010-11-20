@@ -1,0 +1,15 @@
+﻿@model object
+@using myDojo.Infrastructure.Web.HtmlHelpers;
+@if (Model == null) {
+    <text>@ViewData.ModelMetadata.NullDisplayText</text>
+}
+
+else if(ViewData.ModelMetadata.Properties.FirstOrDefault(p => p.AdditionalValues.ContainsKey("LinkText")) != null)
+{
+  var x = Html.LinkToModelDetails();
+  <text>@Html.DisplayFor(m => x)</text>
+    
+}else if (ViewData.TemplateInfo.TemplateDepth > 1)
+{
+    <text>@ViewData.ModelMetadata.SimpleDisplayText</text>
+}

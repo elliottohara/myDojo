@@ -1,0 +1,14 @@
+﻿@inherits System.Web.Mvc.WebViewPage<IEnumerable<MyDojo.Query.ViewModels.Dojos.DojoDetails>>
+
+@{
+    View.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>All our Schools</h2>
+    
+    @Html.ActionLink("Create new school", "Create")
+
+    @Html.DisplayForModel("UL")
+    
+
