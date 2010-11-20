@@ -54,7 +54,14 @@
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\Microsoft ASP.NET\ASP.NET MVC 3\Assemblies\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\Assemblies\System.Web.WebPages.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -121,10 +128,16 @@
     <None Include="Views\Schools\Create.cshtml" />
     <None Include="Views\Schools\Details.cshtml" />
     <None Include="Views\Schools\List.cshtml" />
+    <None Include="Views\Shared\DisplayTemplates\Address.cshtml" />
+    <None Include="Views\Shared\DisplayTemplates\Header.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\object.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\LI.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ModelLinkViewModel.cshtml" />
+    <None Include="Views\Shared\DisplayTemplates\UL.cshtml" />
     <None Include="Views\User\Details.cshtml" />
     <None Include="Views\User\Edit.cshtml" />
     <None Include="Views\User\Register.cshtml" />
-    <None Include="Views\User\List.cshtml" />
+    <None Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\myDojo.CommandHandlers\myDojo.CommandHandlers.csproj">

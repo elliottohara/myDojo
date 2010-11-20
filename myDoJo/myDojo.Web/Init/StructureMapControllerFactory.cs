@@ -50,6 +50,7 @@ namespace myDojo.Web.Init
             ForSingletonOf<IObjectContainer>().Use(c => MvcApplication.Db.Ext().OpenSession());
             For<RequestContext>().Use(requestContext);
             For<HttpContextBase>().Use(requestContext.HttpContext);
+            For<HttpRequestBase>().Use(requestContext.HttpContext.Request);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 using Db4objects.Db4o;
+using myDojo.Infrastructure.Web.ModelMetaData;
 using myDojo.Web.Init;
 using StructureMap;
 
@@ -46,7 +47,7 @@ namespace myDojo.Web
 
         }
 
-        public string DbFileName = "myDojo1.db4o";
+        public string DbFileName = "elliottstest.db4o";
         
         protected void Application_Start()
         {
@@ -59,7 +60,7 @@ namespace myDojo.Web
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
             Db = OpenDatabase();
-
+            ModelMetadataProviders.Current = new MetadataProvider();
             ControllerBuilder.Current.SetControllerFactory(new StructureMapControllerFactory(ObjectFactory.Container));
             
         }

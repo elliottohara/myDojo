@@ -31,9 +31,9 @@ namespace myDojo.Web.Controllers
         [HttpPost]
         public CommandActionResult<EditMartialArtistInfo> Edit(EditMartialArtistForm model)
         {
-            return Command(new EditMartialArtistInfo(model.Id, model.Name, model.Biography), () => RedirectToAction("List"));
+            return Command(new EditMartialArtistInfo(model.Id, model.Name, model.Biography), () => RedirectToAction("Index"));
         }
-        public ActionResult List()
+        public ActionResult Index()
         {
             return Query<AllMatialArtists>();
         }

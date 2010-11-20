@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountForTheFactThatMSIsSloppy.cs" />
     <Compile Include="Core\Address.cs" />
     <Compile Include="CQRS\Commands\Error.cs" />
     <Compile Include="CQRS\Commands\Failure.cs" />
@@ -86,6 +87,9 @@
     <Compile Include="Web\ActionResults\MappedQueryViewResult.cs" />
     <Compile Include="Web\ActionResults\QueryActionResult.cs" />
     <Compile Include="Web\Authentication\DuplicateUserException.cs" />
+    <Compile Include="Web\HtmlHelpers\HtmlHelperExtensions.cs" />
+    <Compile Include="Web\HtmlHelpers\ModelMetaDataExtensions.cs" />
+    <Compile Include="Web\ModelMetaData\MetadataProvider.cs" />
     <Compile Include="Web\Validation\PropertiesMustMatchAttribute.cs" />
     <Compile Include="Web\Validation\EmailAttribute.cs" />
   </ItemGroup>
