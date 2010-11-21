@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
-using myDojo.Infrastructure.Web.MvcModelMetaData;
+using myDojo.Infrastructure.Web.MvcModelMetaData.Builders;
 using StructureMap;
 
-namespace myDojo.Infrastructure.Web.ModelMetaData
+namespace myDojo.Infrastructure.Web.MvcModelMetaData
 {
     public class MetadataProvider : DataAnnotationsModelMetadataProvider
     {
@@ -27,10 +26,5 @@ namespace myDojo.Infrastructure.Web.ModelMetaData
             return metadata;
         }
 
-    }
-    public class LinkText : Attribute
-    {
-        public string LinkFormatProperty { get; set; }
-        public string LinkFormatString { get; set; }
     }
 }

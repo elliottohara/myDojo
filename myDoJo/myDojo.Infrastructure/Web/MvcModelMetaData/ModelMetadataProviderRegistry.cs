@@ -1,7 +1,7 @@
-using myDojo.Infrastructure.Web.MvcModelMetaData;
+using myDojo.Infrastructure.Web.MvcModelMetaData.Builders;
 using StructureMap.Configuration.DSL;
 
-namespace myDojo.Infrastructure.Web.ModelMetaData
+namespace myDojo.Infrastructure.Web.MvcModelMetaData
 {
     public class ModelMetadataProviderRegistry : Registry
     {

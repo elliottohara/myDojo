@@ -2,9 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using myDojo.Infrastructure.Web.ModelMetaData;
 
-namespace myDojo.Infrastructure.Web.MvcModelMetaData
+namespace myDojo.Infrastructure.Web.MvcModelMetaData.Builders
 {
     public class LinkTextModelMetadataBuilder : IModelMetadataBuilder
     {

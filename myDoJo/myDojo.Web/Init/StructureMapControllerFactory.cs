@@ -47,7 +47,7 @@ namespace myDojo.Web.Init
     {
         public PerRequestRegistry(RequestContext requestContext)
         {
-            ForSingletonOf<IObjectContainer>().Use(c => MvcApplication.Db.Ext().OpenSession());
+            ForSingletonOf<IObjectContainer>().Use(c => c.GetInstance<ObjectContainerProvider>().OpenSession());
             For<RequestContext>().Use(requestContext);
             For<HttpContextBase>().Use(requestContext.HttpContext);
             For<HttpRequestBase>().Use(requestContext.HttpContext.Request);

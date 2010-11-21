@@ -10,6 +10,13 @@ namespace myDojo.Web.Controllers
 {
     public class UserController : DefaultController
     {
+        private readonly IMembershipProvider _provider;
+
+        public UserController(IMembershipProvider provider)
+        {
+            _provider = provider;
+        }
+
         public ActionResult Register()
         {
             return View(new RegisterUserForm());
@@ -17,7 +24,12 @@ namespace myDojo.Web.Controllers
         [HttpPost]
         public CommandActionResult<RegisterUser> Register(RegisterUserForm form)
         {
-            return Command(new RegisterUser(form.EmailAddress,null,form.Password), () => RedirectToAction("Edit", new {email = form.EmailAddress}));
+            return Command(new RegisterUser(form.EmailAddress,null,form.Password), () =>
+                                                                                       {
+                                                                                           _provider.SignIn(
+                                                                                               form.EmailAddress, false);
+                                                                                           return RedirectToAction("Edit",new{email=form.EmailAddress});
+                                                                                       });
         }
         [HttpGet]
         public ActionResult Edit(string email)

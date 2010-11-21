@@ -1,7 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using myDojo.Infrastructure;
 using myDojo.Infrastructure.Core;
-using myDojo.Infrastructure.Web.ModelMetaData;
+using myDojo.Infrastructure.Web.MvcModelMetaData;
+using myDojo.Infrastructure.Web.MvcModelMetaData.Attributes;
 
 namespace MyDojo.Query.ViewModels.Dojos
 {
@@ -9,6 +10,7 @@ namespace MyDojo.Query.ViewModels.Dojos
     public class DojoDetails : ObjectWithIdentity 
     {
         [LinkText(LinkFormatProperty = "Id",LinkFormatString = "~/Schools/Details/{0}")]
+        [PrimaryDisplayProperty]
         public virtual string Name { get; set; }
         public virtual Address Address { get; set; }
         [DataType(DataType.Html)]

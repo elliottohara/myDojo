@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using myDojo.Infrastructure.Web.MvcModelMetaData;
+using myDojo.Infrastructure.Web.MvcModelMetaData.Builders;
 
 namespace myDojo.Infrastructure.Web.HtmlHelpers
 {
@@ -10,7 +13,7 @@ namespace myDojo.Infrastructure.Web.HtmlHelpers
         public static ModelLinkViewModel LinkToModelDetails<TModel>(this HtmlHelper<TModel> helper)
         {
             var displayProperty = helper.ViewData.ModelMetadata.Properties.FirstOrDefault(p => p.AdditionalValues.ContainsKey("LinkText"));
-            var linkTextAttribute = (ModelMetaData.LinkText)displayProperty.AdditionalValues["LinkText"];
+            var linkTextAttribute = (LinkText)displayProperty.AdditionalValues["LinkText"];
             var linkFormat = linkTextAttribute.LinkFormatString;
             var linkProperty = helper.ViewData.ModelMetadata.Properties.First(p => p.PropertyName == linkTextAttribute.LinkFormatProperty);
             var request = ServiceLocation.CurrentContainer.GetInstance<HttpRequestBase>();
@@ -22,21 +25,24 @@ namespace myDojo.Infrastructure.Web.HtmlHelpers
             return new ModelLinkViewModel(link, text);
 
         }
-    }
-
-    public class ModelLinkViewModel
-    {
-        public ModelLinkViewModel()
+        public static ModelMetadata PrimaryDisplayProperty<T>(this ViewDataDictionary<T> viewData)
         {
-
+            return viewData.ModelMetadata.Properties.FirstOrDefault(p => p.AdditionalValues.ContainsKey(PrimaryDisplayModelMetadataBuilder.PrimaryDisplayKey));
         }
-        public ModelLinkViewModel(string link, string text)
+        public static IEnumerable<ModelMetadata> PropertiesForDisplay<T>(this ViewDataDictionary<T> viewData)
         {
-            Url = link;
-            Text = text;
+            return viewData.ModelMetadata
+                .Properties
+                .Where(
+                    pm =>
+                    pm.PropertyName != viewData.ModelMetadata.DisplayName
+                    && pm.ShowForDisplay &&
+                    !viewData.TemplateInfo.Visited(pm))
+                .Where(pm =>
+                           {
+                               if (viewData.PrimaryDisplayProperty() == null) return true;
+                               return pm.PropertyName != viewData.PrimaryDisplayProperty().PropertyName;
+                           });
         }
-
-        public string Text { get; set; }
-        public string Url { get; set; }
     }
 }

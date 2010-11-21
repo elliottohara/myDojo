@@ -9,5 +9,5 @@
   <Module PersistentId="AC41CC99-1CFB-4A9E-BB4B-9746A23FAAE1" ModuleId="myDojo.CommandValidation" />
   <Module PersistentId="21914742-4143-4074-96F4-22CC686236F2" ModuleId="myDojo.Events" />
   <Module PersistentId="0382E903-E4AB-4DAE-BAA1-46DF180A7D73" ModuleId="myDojo.CommandHandlers" />
-  <Module PersistentId="03CEB800-F8D6-47BC-AF00-29358E8B5A24" ModuleId="Web" />
+  <Module PersistentId="1803892A-644A-4008-96ED-D89F5449FC6A" ModuleId="Db40Server" />
 </Modules>

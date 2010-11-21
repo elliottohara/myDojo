@@ -88,10 +88,14 @@
     <Compile Include="Web\ActionResults\QueryActionResult.cs" />
     <Compile Include="Web\Authentication\DuplicateUserException.cs" />
     <Compile Include="Web\HtmlHelpers\HtmlHelperExtensions.cs" />
+    <Compile Include="Web\HtmlHelpers\ModelLinkViewModel.cs" />
     <Compile Include="Web\HtmlHelpers\ModelMetaDataExtensions.cs" />
+    <Compile Include="Web\MvcModelMetaData\Attributes\PrimaryDisplayProperty.cs" />
     <Compile Include="Web\MvcModelMetaData\Builders\IModelMetadataBuilder.cs" />
     <Compile Include="Web\MvcModelMetaData\Builders\LinkTextModelMetadataBuilder.cs" />
+    <Compile Include="Web\MvcModelMetaData\Builders\PrimaryDisplayModelMetadataBuilder.cs" />
     <Compile Include="Web\MvcModelMetaData\Builders\WilsonModelMetadataBuilder.cs" />
+    <Compile Include="Web\MvcModelMetaData\Attributes\LinkText.cs" />
     <Compile Include="Web\MvcModelMetaData\MetadataProvider.cs" />
     <Compile Include="Web\MvcModelMetaData\ModelMetadataProviderRegistry.cs" />
     <Compile Include="Web\Validation\PropertiesMustMatchAttribute.cs" />

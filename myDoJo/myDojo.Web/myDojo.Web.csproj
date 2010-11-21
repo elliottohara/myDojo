@@ -39,6 +39,9 @@
     <Reference Include="Db4objects.Db4o">
       <HintPath>..\..\..\..\ThirdPartyLib\db4o\db4o-8.0\bin\net-4.0\Db4objects.Db4o.dll</HintPath>
     </Reference>
+    <Reference Include="Db4objects.Db4o.CS">
+      <HintPath>..\refs\Db4objects.Db4o.CS.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Rhino.Mocks">
       <HintPath>..\refs\Rhino.Mocks.dll</HintPath>
@@ -79,8 +82,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Init\AutoMapperConfiguration.cs" />
+    <Compile Include="Init\StartupTasks\AutoMapperConfiguration.cs" />
     <Compile Include="Init\BootStrapper.cs" />
+    <Compile Include="Init\StartupTasks\GlobalFilterStartup.cs" />
+    <Compile Include="Init\StartupTasks\ObjectContainerProvider.cs" />
+    <Compile Include="Init\StartupTasks\RouteRegister.cs" />
+    <Compile Include="Init\StartupTasks\SetControllerFactoryAndModelMetaDataProvider.cs" />
     <Compile Include="Init\StructureMapControllerFactory.cs" />
     <Compile Include="Init\StructureMapInitilizer.cs" />
     <Compile Include="Init\WebRegistry.cs" />

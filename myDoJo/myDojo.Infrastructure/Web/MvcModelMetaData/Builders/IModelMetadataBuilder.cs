@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace myDojo.Infrastructure.Web.MvcModelMetaData
+namespace myDojo.Infrastructure.Web.MvcModelMetaData.Builders
 {
     public interface IModelMetadataBuilder
     {

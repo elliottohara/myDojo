@@ -1,11 +1,11 @@
-namespace myDojo.Infrastructure.Web.MvcModelMetaData
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.Linq;
-    using System.Web.Mvc;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web.Mvc;
 
+namespace myDojo.Infrastructure.Web.MvcModelMetaData.Builders
+{
     public class WilsonModelMetadataBuilder : IModelMetadataBuilder
     {
         public ModelMetadata BuildUp(ModelMetadata metadata,IEnumerable<Attribute> attributes,

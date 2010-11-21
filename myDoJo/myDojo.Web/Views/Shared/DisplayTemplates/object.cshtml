@@ -1,11 +1,12 @@
 ﻿@model object
+@using myDojo.Infrastructure.Web.HtmlHelpers;
 @if (Model == null) {
     <text>@ViewData.ModelMetadata.NullDisplayText</text>
 } else if (ViewData.TemplateInfo.TemplateDepth > 1) {
     <text>@ViewData.ModelMetadata.SimpleDisplayText</text>
 } else {
         <h3>@ViewData.ModelMetadata.SimpleDisplayText</h3>
-   foreach (var prop in ViewData.ModelMetadata.Properties.Where(pm => pm.PropertyName != ViewData.ModelMetadata.DisplayName && pm.ShowForDisplay && !ViewData.TemplateInfo.Visited(pm)))
+   foreach (var prop in ViewData.PropertiesForDisplay())
    {
         if (prop.HideSurroundingHtml) {
             <text>@Html.Display(prop.PropertyName)</text>
