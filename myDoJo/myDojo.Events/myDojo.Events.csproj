@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Dojos\DojoChangedAddress.cs" />
     <Compile Include="Dojos\DojoChangedName.cs" />
+    <Compile Include="Dojos\DojoDescriptionChanged.cs" />
+    <Compile Include="Dojos\DojoRemovedFromSite.cs" />
     <Compile Include="Dojos\StudentRegistered.cs" />
     <Compile Include="Dojos\UserCreatedDojo.cs" />
     <Compile Include="MartialArtists\MartialArtistChangedBio.cs" />

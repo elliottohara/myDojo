@@ -60,9 +60,9 @@ namespace myDojo.Web
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
             Db = OpenDatabase();
-            ModelMetadataProviders.Current = new MetadataProvider();
             ControllerBuilder.Current.SetControllerFactory(new StructureMapControllerFactory(ObjectFactory.Container));
-            
+            ModelMetadataProviders.Current = ObjectFactory.Container.GetInstance<MetadataProvider>();
+
         }
     }
 }

@@ -12,5 +12,6 @@ namespace myDojo.Infrastructure
         IEnumerable<T> GetAll();
         T GetOrCreate(Guid id);
         T Change(Guid id, Action<T> doThis);
+        void Delete(T item);
     }
 }

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MyDojo.Query.ViewModels.Dojos.DojoDetails>
+@{
+    View.Title = "AdminList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Adminster Schools</h2>
+<ul id="schoolList">
+@foreach (var item in Model)
+{
+    <li>
+        @Html.ActionLink("Edit", "Edit")
+        @Html.DisplayFor(m => item.Name)
+        @{
+            var form = new myDojo.Web.Models.Schools.DeleteSchoolForm(item.Id);
+        }
+        @using (Html.BeginForm("Delete", "Schools"))
+        { 
+            @Html.EditorFor(m => form);
+            <input type="submit" value="Delete" />
+        }
+    </li>
+}
+</ul>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#schoolList form').submit(function (ev) {
+            $.ajax({ url: $(this).attr('action'), data: $(this).serialize(),type:"DELETE", });
+            $(this).parents('li').eq(0).remove();
+            ev.preventDefault();
+        });
+        
+
+    });
+</script>

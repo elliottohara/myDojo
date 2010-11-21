@@ -13,10 +13,10 @@ namespace myDojo.Domain.Dojos
     public class Dojo : ObjectWithIdentity
     {
         internal protected virtual User Creator { get; set; }
-
+        protected internal virtual bool IsActive { get; set; }
         public Dojo(Guid id,User creator):base(id)
         {
-            Creator = creator;
+           Creator = creator;
            Registrations = new List<Registration>();
         }
         public virtual Dojo Register(MartialArtist martialArtist)
@@ -39,7 +39,17 @@ namespace myDojo.Domain.Dojos
             DomainEvents.Raise(new DojoChangedAddress(Id,address));
             return this;
         }
+        public virtual Dojo ChangeDescription(string description)
+        {
+            DomainEvents.Raise(new DojoDescriptionChanged(Id,description));
+            return this;
+        }
         protected internal IList<Registration> Registrations { get; set; }
-        
+
+        public void RemoveFromSite()
+        {
+            IsActive = false;
+            DomainEvents.Raise(new DojoRemovedFromSite(Id));
+        }
     }
 }

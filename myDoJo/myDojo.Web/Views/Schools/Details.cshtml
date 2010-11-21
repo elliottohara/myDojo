@@ -1,8 +1,8 @@
-﻿@inherits System.Web.Mvc.WebViewPage<MyDojo.Query.ViewModels.Dojos.DojoDetails>
+﻿@model MyDojo.Query.ViewModels.Dojos.DojoDetails
 
 @{
     View.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @Html.DisplayForModel()
-@Html.DisplayFor(m =>m.Address)
+

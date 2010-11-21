@@ -11,7 +11,7 @@ namespace MyDojo.Query.Infrastructure
     public class Db4oReadModelRepository<T> : Db4oRepo<T>, IReadModelRepository<T> where T : class,IObjectWithIdentity, new()
     {
         public Db4oReadModelRepository(IObjectContainer db):base(db){}
-        public IEnumerable<T> Get(Predicate<T> query)
+        public new IEnumerable<T> Get(Predicate<T> query)
         {
             return base.Get(query);
         }
@@ -41,6 +41,11 @@ namespace MyDojo.Query.Infrastructure
             doThis(thing);
             Store(thing);
             return thing;
+        }
+
+        public new void Delete(T item)
+        {
+            base.Delete(item);
         }
     }
 }

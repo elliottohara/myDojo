@@ -1,4 +1,4 @@
-﻿@inherits System.Web.Mvc.WebViewPage<IEnumerable<MyDojo.Query.ViewModels.Dojos.DojoDetails>>
+﻿@model IEnumerable<MyDojo.Query.ViewModels.Dojos.DojoDetails>
 
 @{
     View.Title = "List";
@@ -6,9 +6,9 @@
 }
 
     <h2>All our Schools</h2>
-    
     @Html.ActionLink("Create new school", "Create")
 
     @Html.DisplayForModel("UL")
+   
     
 

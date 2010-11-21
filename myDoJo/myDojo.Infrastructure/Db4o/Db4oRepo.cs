@@ -26,6 +26,11 @@ namespace myDojo.Infrastructure.Db4o
         {
             return Db.Query(query);
         }
+        protected virtual void Delete(T item)
+        {
+            Db.Delete(item);
+        }
+        
         
     }
 }

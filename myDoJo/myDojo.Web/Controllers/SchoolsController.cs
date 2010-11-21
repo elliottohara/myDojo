@@ -39,13 +39,22 @@ namespace myDojo.Web.Controllers
                                   StreetNumber = form.StreetNumber,
                               };
             return Command(
-                new CreateNewDojo(_currentUserProvider.CurrentLoggedInUser().Id, form.Id, form.Name, address),
+                new CreateNewDojo(_currentUserProvider.CurrentLoggedInUser().Id, form.Id, form.Name, address,form.Description),
                 () => RedirectToAction("List", "Schools"));
         }
 
         public ActionResult List()
         {
             return Query<AllDojos>();
+        }
+        public ActionResult AdminList()
+        {
+            return Query<AllDojos>();
+        }
+        [AcceptVerbs("POST","DELETE")]
+        public CommandActionResult<DeleteDojo> Delete(DeleteSchoolForm form)
+        {
+            return Command(new DeleteDojo(form.SchoolId), () => RedirectToAction("List"));
         }
     }
 }

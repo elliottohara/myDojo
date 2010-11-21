@@ -89,7 +89,11 @@
     <Compile Include="Web\Authentication\DuplicateUserException.cs" />
     <Compile Include="Web\HtmlHelpers\HtmlHelperExtensions.cs" />
     <Compile Include="Web\HtmlHelpers\ModelMetaDataExtensions.cs" />
-    <Compile Include="Web\ModelMetaData\MetadataProvider.cs" />
+    <Compile Include="Web\MvcModelMetaData\Builders\IModelMetadataBuilder.cs" />
+    <Compile Include="Web\MvcModelMetaData\Builders\LinkTextModelMetadataBuilder.cs" />
+    <Compile Include="Web\MvcModelMetaData\Builders\WilsonModelMetadataBuilder.cs" />
+    <Compile Include="Web\MvcModelMetaData\MetadataProvider.cs" />
+    <Compile Include="Web\MvcModelMetaData\ModelMetadataProviderRegistry.cs" />
     <Compile Include="Web\Validation\PropertiesMustMatchAttribute.cs" />
     <Compile Include="Web\Validation\EmailAttribute.cs" />
   </ItemGroup>

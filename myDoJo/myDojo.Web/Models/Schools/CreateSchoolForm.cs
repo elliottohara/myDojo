@@ -28,5 +28,8 @@ namespace myDojo.Web.Models.Schools
         public string State { get; set; }
         [Display(AutoGenerateField = true, Name = "PostalCode", Order = 6, Prompt = "PostalCode")]
         public string PostalCode { get; set; }
+        [Display(Name = "Description",Order = 7)]
+        [DataType(DataType.Html)]
+        public string Description { get; set; }
     }
 }

@@ -10,14 +10,16 @@ namespace myDojo.Commands.Dojos
         public Guid SchoolId { get; set; }
         public string Name { get; set; }
         public Address Address { get; set; }
+        public string Description { get; set; }
 
         public CreateNewDojo(Guid userId,Guid schoolId,
-            string name,Address address)
+            string name,Address address,string description)
         {
             UserId = userId;
             SchoolId = schoolId;
             Name = name;
             Address = address;
+            Description = description;
         }
     }
 }

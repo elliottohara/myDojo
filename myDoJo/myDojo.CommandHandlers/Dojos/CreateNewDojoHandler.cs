@@ -25,8 +25,11 @@ namespace myDojo.CommandHandlers.Dojos
             _userRepo.Store(user);
 
             var dojo = _dojoRepo.GetById(command.SchoolId);
+
             dojo.ChangeNameTo(command.Name)
-                .ChangeAddressTo(command.Address);
+                .ChangeAddressTo(command.Address)
+                .ChangeDescription(command.Description);
+
             _dojoRepo.Store(dojo);
         }
 
