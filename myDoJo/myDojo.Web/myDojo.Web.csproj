@@ -93,6 +93,7 @@
     <Compile Include="Init\WebRegistry.cs" />
     <Compile Include="Models\Account\LogonForm.cs" />
     <Compile Include="Models\Schools\DeleteSchoolForm.cs" />
+    <Compile Include="Models\Schools\JoinSchoolForm.cs" />
     <Compile Include="Models\Users\EditMartialArtistForm.cs" />
     <Compile Include="Models\Users\RegisterUserForm.cs" />
     <Compile Include="Models\Schools\CreateSchoolForm.cs" />
@@ -140,7 +141,11 @@
     <Content Include="Views\Schools\AdminList.cshtml" />
     <None Include="Views\Schools\Create.cshtml" />
     <None Include="Views\Schools\Details.cshtml" />
+    <Content Include="Views\Schools\Join.cshtml" />
     <None Include="Views\Schools\List.cshtml" />
+    <Content Include="Views\Schools\Registrations.cshtml">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <None Include="Views\Shared\DisplayTemplates\Address.cshtml" />
     <None Include="Views\Shared\DisplayTemplates\Header.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\object.cshtml" />

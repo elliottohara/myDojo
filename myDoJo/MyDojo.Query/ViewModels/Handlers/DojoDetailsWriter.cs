@@ -13,7 +13,8 @@ namespace MyDojo.Query.ViewModels
         Handles<DojoChangedName>,
         Handles<DojoChangedAddress>,
         Handles<DojoDescriptionChanged>,
-        Handles<DojoRemovedFromSite>
+        Handles<DojoRemovedFromSite>,
+        Handles<StudentRegistered>
     {
         private readonly IReadModelRepository<DojoDetails> _dojoDetailsRepository;
 
@@ -45,6 +46,11 @@ namespace MyDojo.Query.ViewModels
         {
             var item = _dojoDetailsRepository.GetById(@event.DojoId);
             _dojoDetailsRepository.Delete(item);
+        }
+
+        public void Handle(StudentRegistered @event)
+        {
+            _dojoDetailsRepository.Change(@event.DojoId, d => d.NumberOfStudents++);
         }
     }
 }

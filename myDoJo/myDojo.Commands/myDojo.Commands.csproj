@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Dojos\CreateNewDojo.cs" />
     <Compile Include="Dojos\DeleteDojo.cs" />
+    <Compile Include="Dojos\RegisterStudent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users\ChangeBio.cs" />
     <Compile Include="Users\ChangeName.cs" />

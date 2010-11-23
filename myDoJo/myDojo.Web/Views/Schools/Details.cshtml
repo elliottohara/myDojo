@@ -1,8 +1,16 @@
 ﻿@model MyDojo.Query.ViewModels.Dojos.DojoDetails
+@using myDojo.Web.Models.Schools;
 
 @{
     View.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var form = new JoinSchoolForm { DojoId = Model.Id };
 }
 @Html.DisplayForModel()
+@using (Html.BeginForm("Join","Schools"))
+{
+    @Html.EditorFor(m => form.DojoId);
+    <input type="submit" value="Join" />
+}
+@{Html.RenderAction("Registrations", "Schools", new { dojoId = Model.Id });}
 

@@ -26,7 +26,7 @@ namespace myDojo.Web.Init
             nestedContainer.Configure(c => c.AddRegistry(new PerRequestRegistry(requestContext)));
             requestContext.HttpContext.Items[ContainerKey] = nestedContainer;
             ServiceLocation.CurrentContainer = nestedContainer;
-            return (IController) nestedContainer.GetInstance(controllerType);
+            return (IController)nestedContainer.GetInstance(controllerType);
         }
 
         public override void ReleaseController(IController controller)
@@ -34,23 +34,29 @@ namespace myDojo.Web.Init
             var baseController = controller as Controller;
             if (baseController != null)
             {
-                var nestedContainer = (IContainer) baseController.HttpContext.Items[ContainerKey];
-                var db = nestedContainer.GetInstance<IObjectContainer>();
-                db.Close();
-                nestedContainer.Dispose();
+                try
+                {
+                    var nestedContainer = (IContainer)baseController.HttpContext.Items[ContainerKey];
+                    var db = nestedContainer.GetInstance<IObjectContainer>();
+                    db.Close();
+                    nestedContainer.Dispose();
+                }
+                catch
+                {//GULP!}
+                }
+                base.ReleaseController(controller);
             }
-            base.ReleaseController(controller);
         }
-    }
 
-    public class PerRequestRegistry : Registry
-    {
-        public PerRequestRegistry(RequestContext requestContext)
+        public class PerRequestRegistry : Registry
         {
-            ForSingletonOf<IObjectContainer>().Use(c => c.GetInstance<ObjectContainerProvider>().OpenSession());
-            For<RequestContext>().Use(requestContext);
-            For<HttpContextBase>().Use(requestContext.HttpContext);
-            For<HttpRequestBase>().Use(requestContext.HttpContext.Request);
+            public PerRequestRegistry(RequestContext requestContext)
+            {
+                ForSingletonOf<IObjectContainer>().Use(c => c.GetInstance<ObjectContainerProvider>().OpenSession());
+                For<RequestContext>().Use(requestContext);
+                For<HttpContextBase>().Use(requestContext.HttpContext);
+                For<HttpRequestBase>().Use(requestContext.HttpContext.Request);
+            }
         }
     }
 }

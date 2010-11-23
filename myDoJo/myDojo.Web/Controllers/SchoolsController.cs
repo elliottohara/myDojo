@@ -42,7 +42,20 @@ namespace myDojo.Web.Controllers
                 new CreateNewDojo(_currentUserProvider.CurrentLoggedInUser().Id, form.Id, form.Name, address,form.Description),
                 () => RedirectToAction("List", "Schools"));
         }
-
+        public ActionResult Join()
+        {
+            return View(new JoinSchoolForm());
+        }
+        [HttpPost]
+        public CommandActionResult<RegisterStudent> Join(JoinSchoolForm form)
+        {
+            return Command(new RegisterStudent(_currentUserProvider.CurrentLoggedInUser().Id, form.DojoId),
+                           () => RedirectToAction("Details", new {Id = form.DojoId}));
+        }
+        public ActionResult Registrations(Guid dojoId)
+        {
+            return Query<RegistrationsBySchool>(q => q.DojoId = dojoId);
+        }
         public ActionResult List()
         {
             return Query<AllDojos>();

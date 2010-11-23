@@ -44,6 +44,7 @@
     <Compile Include="CommandHandlerRegistry.cs" />
     <Compile Include="Dojos\CreateNewDojoHandler.cs" />
     <Compile Include="Dojos\DeleteDojo.cs" />
+    <Compile Include="Dojos\RegisterStudentHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users\ChangeBioHandler.cs" />
     <Compile Include="Users\ChangeNameHandler.cs" />

@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using myDojo.Infrastructure;
 using myDojo.Infrastructure.Core;
@@ -15,5 +16,7 @@ namespace MyDojo.Query.ViewModels.Dojos
         public virtual Address Address { get; set; }
         [DataType(DataType.Html)]
         public virtual string Description { get; set; }
+        [ReadOnly(true)]
+        public int NumberOfStudents { get; set; }
     }
 }

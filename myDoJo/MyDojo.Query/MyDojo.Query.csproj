@@ -50,11 +50,14 @@
     <Compile Include="Queries\AllMatialArtists.cs" />
     <Compile Include="Queries\Dojos\AllDojos.cs" />
     <Compile Include="Queries\Dojos\DojoById.cs" />
+    <Compile Include="Queries\Dojos\RegistrationsBySchool.cs" />
     <Compile Include="Queries\GetMartialArtistDetailsByEmail.cs" />
     <Compile Include="Queries\MartialArtistDetailsById.cs" />
     <Compile Include="ViewModels\Dojos\DojoDetails.cs" />
+    <Compile Include="ViewModels\Dojos\StudentRegistrationView.cs" />
     <Compile Include="ViewModels\Handlers\DojoDetailsWriter.cs" />
     <Compile Include="ViewModels\Handlers\MartialArtistDetailsWriter.cs" />
+    <Compile Include="ViewModels\Handlers\StudentRegistrationViewWriter.cs" />
     <Compile Include="ViewModels\Users\MartialArtistDetails.cs" />
     <Compile Include="ViewModels\PromotionViewModel.cs" />
   </ItemGroup>
